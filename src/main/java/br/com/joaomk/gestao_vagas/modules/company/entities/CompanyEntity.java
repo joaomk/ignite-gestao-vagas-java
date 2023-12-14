@@ -1,4 +1,4 @@
-package br.com.joaomk.gestao_vagas.modules.candidate;
+package br.com.joaomk.gestao_vagas.modules.company.entities;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -15,13 +15,12 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Data
-@Entity(name = "candidates")
-public class CandidateEntity {
-
+@Entity(name = "company")
+public class CompanyEntity {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String name;
 
     @Pattern(regexp = "\\S+", message = "O campo [username] não deve conter espaços")
     private String username;
@@ -31,12 +30,11 @@ public class CandidateEntity {
 
     @Length(min = 6, max = 28, message = "O campo [password] deve ter entre 6 e 28 caracteres")
     private String password;
-    private String description;
-    private String curriculum;
 
+    private String website;
+    private String name;
+    private String description;
+    
     @CreationTimestamp
     private LocalDateTime createdAt;
-
-
-    
 }
