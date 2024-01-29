@@ -29,7 +29,7 @@ public class CandidateEntity {
     @Email(message = "O campo [email] deve conter um e-mail válido")
     private String email;
 
-    @Length(min = 6, max = 28, message = "O campo [password] deve ter entre 6 e 28 caracteres")
+    @Length(min = 6, max = 200, message = "O campo [password] deve ter entre 6 e 200 caracteres")
     private String password;
     private String description;
     private String curriculum;
@@ -37,6 +37,4 @@ public class CandidateEntity {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-
-    
 }
